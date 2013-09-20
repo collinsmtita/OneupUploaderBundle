@@ -55,3 +55,8 @@ When reporting a bug, it may be a good idea to reproduce it in a basic project
 built using the [Symfony Standard Edition](https://github.com/symfony/symfony-standard)
 to allow developers of the bundle to reproduce the issue by simply cloning it
 and following some steps.
+
+Contributing
+------------
+
+As of version 1.0 of this bundle, there is a seperate `develop` branch in order to follow the instructions given in [A successfull Git branching model](http://nvie.com/posts/a-successful-git-branching-model/). The master branch always reflects a _production-ready_ state, whereas `develop` is the "Work in progress" branch. If you forge a pull request, be sure to pull it to the `develop` branch.
