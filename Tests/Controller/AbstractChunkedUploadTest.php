@@ -46,7 +46,7 @@ abstract class AbstractChunkedUploadTest extends AbstractUploadTest
                 ++ $validationCount;
             });
 
-            $client->request('POST', $endpoint, $this->getNextRequestParameters($i), array($file));
+            $client->request('POST', $endpoint, $this->getNextRequestParameters($i), [$file]);
             $response = $client->getResponse();
 
             $this->assertTrue($response->isSuccessful());
@@ -89,7 +89,7 @@ abstract class AbstractChunkedUploadTest extends AbstractUploadTest
                 ++ $uploadCount;
             });
 
-            $client->request('POST', $endpoint, $this->getNextRequestParameters($i), array($this->getNextFile($i)));
+            $client->request('POST', $endpoint, $this->getNextRequestParameters($i), [$this->getNextFile($i)]);
         }
 
         $this->assertEquals($this->total, $chunkCount);

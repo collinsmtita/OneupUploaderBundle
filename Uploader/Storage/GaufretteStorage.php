@@ -26,7 +26,7 @@ class GaufretteStorage implements StorageInterface
         $path = is_null($path) ? $name : sprintf('%s/%s', $path, $name);
 
         if ($this->filesystem->getAdapter() instanceof MetadataSupporter) {
-            $this->filesystem->getAdapter()->setMetadata($name, array('contentType' => $file->getMimeType()));
+            $this->filesystem->getAdapter()->setMetadata($name, ['contentType' => $file->getMimeType()]);
         }
 
         $src = new LocalStream($file->getPathname());

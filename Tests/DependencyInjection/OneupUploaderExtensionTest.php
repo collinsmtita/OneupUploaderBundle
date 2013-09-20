@@ -48,10 +48,10 @@ class OneupUploaderExtensionTest extends \PHPUnit_Framework_TestCase
         $getMaxUploadSize->setAccessible(true);
         $getValueInBytes->setAccessible(true);
 
-        $store = array(
+        $store = [
             $getValueInBytes->invoke($mock, ini_get('upload_max_filesize')),
             $getValueInBytes->invoke($mock, ini_get('post_max_size'))
-        );
+        ];
 
         $min = min($store);
 

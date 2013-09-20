@@ -77,7 +77,7 @@ abstract class AbstractController
      */
     protected function getFiles(FileBag $bag)
     {
-        $files = array();
+        $files = [];
         $fileBag = $bag->all();
         $fileIterator = new \RecursiveIteratorIterator(new \RecursiveArrayIterator($fileBag), \RecursiveIteratorIterator::SELF_FIRST);
 

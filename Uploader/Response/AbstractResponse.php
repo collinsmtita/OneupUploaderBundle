@@ -10,7 +10,7 @@ abstract class AbstractResponse implements \ArrayAccess, ResponseInterface
 
     public function __construct()
     {
-        $this->data = array();
+        $this->data = [];
     }
 
     public function offsetSet($offset, $value)
@@ -54,7 +54,7 @@ abstract class AbstractResponse implements \ArrayAccess, ResponseInterface
                     throw new \InvalidArgumentException("The specified offset is set but is not an array at" . $offset);
                 }
             } else {
-                $element[$offset] = array();
+                $element[$offset] = [];
                 $element =& $element[$offset];
             }
         }

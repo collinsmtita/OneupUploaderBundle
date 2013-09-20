@@ -13,16 +13,16 @@ class MooUploadTest extends AbstractControllerTest
 
     protected function getRequestParameters()
     {
-        return array();
+        return [];
     }
 
     protected function getRequestFile()
     {
-        return array(new UploadedFile(
+        return [new UploadedFile(
             $this->createTempFile(128),
             'cat.txt',
             'text/plain',
             128
-        ));
+        )];
     }
 }

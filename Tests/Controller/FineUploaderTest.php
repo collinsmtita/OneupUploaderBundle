@@ -14,7 +14,7 @@ class FineUploaderTest extends AbstractChunkedUploadTest
 
     protected function getRequestParameters()
     {
-        return array();
+        return [];
     }
 
     protected function getRequestFile()
@@ -29,12 +29,12 @@ class FineUploaderTest extends AbstractChunkedUploadTest
 
     protected function getNextRequestParameters($i)
     {
-        return array(
+        return [
             'qqtotalparts' => $this->total,
             'qqpartindex' => $i,
             'qquuid' => 'veryuuid',
             'qqfilename' => 'cat.txt'
-        );
+        ];
     }
 
     protected function getNextFile($i)

@@ -12,14 +12,14 @@ class RouteLoaderTest extends \PHPUnit_Framework_TestCase
         $dog = 'HelloThisIsDogController';
 
         $routeLoader = new RouteLoader(array(
-            'cat' => array($cat, array(
+            'cat' => [$cat, [
                 'enable_progress' => false,
                 'enable_cancelation' => false
-            )),
-            'dog' => array($dog, array(
+            ]],
+            'dog' => [$dog, [
                 'enable_progress' => true,
                 'enable_cancelation' => true
-            )),
+            ]],
         ));
 
         $routes = $routeLoader->load(null);

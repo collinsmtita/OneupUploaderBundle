@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\Loader;
 
 class OneupUploaderExtension extends Extension
 {
-    protected $storageServices = array();
+    protected $storageServices = [];
 
     public function load(array $configs, ContainerBuilder $container)
     {
@@ -42,7 +42,7 @@ class OneupUploaderExtension extends Extension
         $container->setParameter('oneup_uploader.chunks', $config['chunks']);
         $container->setParameter('oneup_uploader.orphanage', $config['orphanage']);
 
-        $controllers = array();
+        $controllers = [];
 
         // handle mappings
         foreach ($config['mappings'] as $key => $mapping) {
@@ -135,7 +135,7 @@ class OneupUploaderExtension extends Extension
                 ->addArgument($mapping)
                 ->addArgument($key)
 
-                ->addTag('oneup_uploader.routable', array('type' => $key))
+                ->addTag('oneup_uploader.routable', ['type' => $key])
                 ->setScope('request')
             ;
 
@@ -145,10 +145,10 @@ class OneupUploaderExtension extends Extension
                 }
             }
 
-            $controllers[$key] = array($controllerName, array(
+            $controllers[$key] = [$controllerName, [
                 'enable_progress' => $mapping['enable_progress'],
                 'enable_cancelation' => $mapping['enable_cancelation']
-            ));
+            ]];
         }
 
         $container->setParameter('oneup_uploader.controllers', $controllers);

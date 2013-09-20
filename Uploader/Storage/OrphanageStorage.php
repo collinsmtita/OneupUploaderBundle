@@ -42,7 +42,7 @@ class OrphanageStorage extends FilesystemStorage implements OrphanageStorageInte
 
         try {
             $files = $this->getFiles();
-            $return = array();
+            $return = [];
 
             foreach ($files as $file) {
                 $return[] = $this->storage->upload(new File($file->getPathname()), str_replace($this->getFindPath(), '', $file));
@@ -50,7 +50,7 @@ class OrphanageStorage extends FilesystemStorage implements OrphanageStorageInte
 
             return $return;
         } catch (\Exception $e) {
-            return array();
+            return [];
         }
     }
 

@@ -14,7 +14,7 @@ class DropzoneValidationTest extends AbstractValidationTest
 
     protected function getRequestParameters()
     {
-        return array();
+        return [];
     }
 
     protected function getOversizedFile()

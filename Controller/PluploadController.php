@@ -46,6 +46,6 @@ class PluploadController extends AbstractChunkedController
         // to the uuid otherwise we will get a mess
         $uuid = md5(sprintf('%s.%s', $orig, $session->getId()));
 
-        return array($last, $uuid, $index, $orig);
+        return [$last, $uuid, $index, $orig];
     }
 }

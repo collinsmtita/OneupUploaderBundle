@@ -25,7 +25,7 @@ class OrphanageStorageTest extends \PHPUnit_Framework_TestCase
         $this->numberOfPayloads = 5;
         $this->tempDirectory = sys_get_temp_dir() . '/orphanage';
         $this->realDirectory = sys_get_temp_dir() . '/storage';
-        $this->payloads = array();
+        $this->payloads = [];
 
         $filesystem = new Filesystem();
         $filesystem->mkdir($this->tempDirectory);
@@ -49,7 +49,7 @@ class OrphanageStorageTest extends \PHPUnit_Framework_TestCase
         $session = new Session(new MockArraySessionStorage());
         $session->start();
 
-        $config = array('directory' => $this->tempDirectory);
+        $config = ['directory' => $this->tempDirectory];
 
         $this->orphanage = new OrphanageStorage($this->storage, $session, $config, 'cat');
     }

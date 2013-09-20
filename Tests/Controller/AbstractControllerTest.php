@@ -16,7 +16,7 @@ abstract class AbstractControllerTest extends WebTestCase
         $this->client = static::createClient();
         $this->container = $this->client->getContainer();
         $this->helper = $this->container->get('oneup_uploader.templating.uploader_helper');
-        $this->createdFiles = array();
+        $this->createdFiles = [];
 
         $routes = $this->container->get('router')->getRouteCollection()->all();
     }

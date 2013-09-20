@@ -14,7 +14,7 @@ class PluploadTest extends AbstractChunkedUploadTest
 
     protected function getRequestParameters()
     {
-        return array();
+        return [];
     }
 
     protected function getRequestFile()
@@ -29,11 +29,11 @@ class PluploadTest extends AbstractChunkedUploadTest
 
     protected function getNextRequestParameters($i)
     {
-        return array(
+        return [
             'chunks' => $this->total,
             'chunk' => $i,
             'name' => 'cat.txt'
-        );
+        ];
     }
 
     protected function getNextFile($i)

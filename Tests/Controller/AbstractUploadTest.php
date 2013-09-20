@@ -16,7 +16,7 @@ abstract class AbstractUploadTest extends AbstractControllerTest
     {
         parent::setUp();
 
-        $this->createdFiles = array();
+        $this->createdFiles = [];
     }
 
     public function testSingleUpload()
@@ -25,7 +25,7 @@ abstract class AbstractUploadTest extends AbstractControllerTest
         $client = $this->client;
         $endpoint = $this->helper->endpoint($this->getConfigKey());
 
-        $client->request('POST', $endpoint, $this->getRequestParameters(), array($this->getRequestFile()));
+        $client->request('POST', $endpoint, $this->getRequestParameters(), [$this->getRequestFile()]);
         $response = $client->getResponse();
 
         $this->assertTrue($response->isSuccessful());
@@ -74,7 +74,7 @@ abstract class AbstractUploadTest extends AbstractControllerTest
             $me->assertEquals('cat', $request->get('grumpy'));
         });
 
-        $client->request('POST', $endpoint, $this->getRequestParameters(), array($this->getRequestFile()));
+        $client->request('POST', $endpoint, $this->getRequestParameters(), [$this->getRequestFile()]);
 
         $this->assertCount(1, $this->getUploadedFiles());
         $this->assertEquals($uploadCount, count($this->getUploadedFiles()));

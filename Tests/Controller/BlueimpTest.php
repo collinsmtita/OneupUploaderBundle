@@ -79,16 +79,16 @@ class BlueimpTest extends AbstractUploadTest
 
     protected function getRequestParameters()
     {
-        return array();
+        return [];
     }
 
     protected function getRequestFile()
     {
-        return array('files' => array(new UploadedFile(
+        return ['files' => [new UploadedFile(
             $this->createTempFile(128),
             'cat.txt',
             'text/plain',
             128
-        )));
+        )]];
     }
 }

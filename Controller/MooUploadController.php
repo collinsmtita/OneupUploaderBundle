@@ -87,7 +87,7 @@ class MooUploadController extends AbstractChunkedController
         // store also to response object
         $this->response->setFinish($last);
 
-        return array($last, $uuid, $index, $orig);
+        return [$last, $uuid, $index, $orig];
     }
 
     protected function createIndex($id)
@@ -119,6 +119,6 @@ class MooUploadController extends AbstractChunkedController
         // create an uploaded file to upload
         $file = new UploadedFile($tempFile, $uploadFileName, null, null, null, true);
 
-        return array($file, $uploadFileName);
+        return [$file, $uploadFileName];
     }
 }

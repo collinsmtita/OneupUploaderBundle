@@ -7,14 +7,14 @@ class AppKernel extends Kernel
 {
     public function registerBundles()
     {
-        $bundles = array(
+        $bundles = [
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
             // bundle to test
             new Oneup\UploaderBundle\OneupUploaderBundle(),
-        );
+        ];
 
         return $bundles;
     }

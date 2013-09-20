@@ -20,12 +20,12 @@ class UploaderExtension extends \Twig_Extension
 
     public function getFunctions()
     {
-        return array(
+        return [
             'oneup_uploader_endpoint' => new \Twig_Function_Method($this, 'endpoint'),
             'oneup_uploader_progress' => new \Twig_Function_Method($this, 'progress'),
             'oneup_uploader_cancel' => new \Twig_Function_Method($this, 'cancel'),
             'oneup_uploader_upload_key' => new \Twig_Function_Method($this, 'uploadKey')
-        );
+        ];
     }
 
     public function endpoint($key)

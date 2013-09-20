@@ -19,7 +19,7 @@ abstract class AbstractValidationTest extends AbstractControllerTest
         $client = $this->client;
         $endpoint = $this->helper->endpoint($this->getConfigKey());
 
-        $client->request('POST', $endpoint, $this->getRequestParameters(), array($this->getOversizedFile()));
+        $client->request('POST', $endpoint, $this->getRequestParameters(), [$this->getOversizedFile()]);
         $response = $client->getResponse();
 
         //$this->assertTrue($response->isNotSuccessful());
@@ -33,7 +33,7 @@ abstract class AbstractValidationTest extends AbstractControllerTest
         $client = $this->client;
         $endpoint = $this->helper->endpoint($this->getConfigKey());
 
-        $client->request('POST', $endpoint, $this->getRequestParameters(), array($this->getFileWithCorrectExtension()));
+        $client->request('POST', $endpoint, $this->getRequestParameters(), [$this->getFileWithCorrectExtension()]);
         $response = $client->getResponse();
 
         $this->assertTrue($response->isSuccessful());
@@ -60,7 +60,7 @@ abstract class AbstractValidationTest extends AbstractControllerTest
             ++ $validationCount;
         });
 
-        $client->request('POST', $endpoint, $this->getRequestParameters(), array($this->getFileWithCorrectExtension()));
+        $client->request('POST', $endpoint, $this->getRequestParameters(), [$this->getFileWithCorrectExtension()]);
 
         $this->assertEquals(1, $validationCount);
     }
@@ -82,7 +82,7 @@ abstract class AbstractValidationTest extends AbstractControllerTest
             ++ $validationCount;
         });
 
-        $client->request('POST', $endpoint, $this->getRequestParameters(), array($this->getFileWithCorrectExtension()));
+        $client->request('POST', $endpoint, $this->getRequestParameters(), [$this->getFileWithCorrectExtension()]);
 
         $this->assertEquals(1, $validationCount);
     }
@@ -93,7 +93,7 @@ abstract class AbstractValidationTest extends AbstractControllerTest
         $client = $this->client;
         $endpoint = $this->helper->endpoint($this->getConfigKey());
 
-        $client->request('POST', $endpoint, $this->getRequestParameters(), array($this->getFileWithIncorrectExtension()));
+        $client->request('POST', $endpoint, $this->getRequestParameters(), [$this->getFileWithIncorrectExtension()]);
         $response = $client->getResponse();
 
         //$this->assertTrue($response->isNotSuccessful());
@@ -107,7 +107,7 @@ abstract class AbstractValidationTest extends AbstractControllerTest
         $client = $this->client;
         $endpoint = $this->helper->endpoint($this->getConfigKey());
 
-        $client->request('POST', $endpoint, $this->getRequestParameters(), array($this->getFileWithCorrectMimeType()));
+        $client->request('POST', $endpoint, $this->getRequestParameters(), [$this->getFileWithCorrectMimeType()]);
         $response = $client->getResponse();
 
         $this->assertTrue($response->isSuccessful());
@@ -129,7 +129,7 @@ abstract class AbstractValidationTest extends AbstractControllerTest
         $client = $this->client;
         $endpoint = $this->helper->endpoint($this->getConfigKey());
 
-        $client->request('POST', $endpoint, $this->getRequestParameters(), array($this->getFileWithIncorrectMimeType()));
+        $client->request('POST', $endpoint, $this->getRequestParameters(), [$this->getFileWithIncorrectMimeType()]);
         $response = $client->getResponse();
 
         //$this->assertTrue($response->isNotSuccessful());

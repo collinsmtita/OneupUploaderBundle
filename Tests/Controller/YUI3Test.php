@@ -14,7 +14,7 @@ class YUI3Test extends AbstractUploadTest
 
     protected function getRequestParameters()
     {
-        return array();
+        return [];
     }
 
     protected function getRequestFile()

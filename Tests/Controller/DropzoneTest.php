@@ -14,7 +14,7 @@ class DropzoneTest extends AbstractUploadTest
 
     protected function getRequestParameters()
     {
-        return array();
+        return [];
     }
 
     protected function getRequestFile()

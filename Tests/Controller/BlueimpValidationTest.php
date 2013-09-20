@@ -118,56 +118,56 @@ class BlueimpValidationTest extends AbstractValidationTest
 
     protected function getRequestParameters()
     {
-        return array();
+        return [];
     }
 
     protected function getOversizedFile()
     {
-        return array('files' => array(new UploadedFile(
+        return ['files' => [new UploadedFile(
             $this->createTempFile(512),
             'cat.ok',
             'text/plain',
             512
-        )));
+        )]];
     }
 
     protected function getFileWithCorrectExtension()
     {
-        return array('files' => array(new UploadedFile(
+        return ['files' => [new UploadedFile(
             $this->createTempFile(128),
             'cat.ok',
             'text/plain',
             128
-        )));
+        )]];
     }
 
     protected function getFileWithIncorrectExtension()
     {
-        return array('files' => array(new UploadedFile(
+        return ['files' => [new UploadedFile(
             $this->createTempFile(128),
             'cat.fail',
             'text/plain',
             128
-        )));
+        )]];
     }
 
     protected function getFileWithCorrectMimeType()
     {
-        return array('files' => array(new UploadedFile(
+        return ['files' => [new UploadedFile(
             $this->createTempFile(128),
             'cat.ok',
             'image/jpg',
             128
-        )));
+        )]];
     }
 
     protected function getFileWithIncorrectMimeType()
     {
-        return array(new UploadedFile(
+        return [new UploadedFile(
             $this->createTempFile(128),
             'cat.ok',
             'image/gif',
             128
-        ));
+        )];
     }
 }

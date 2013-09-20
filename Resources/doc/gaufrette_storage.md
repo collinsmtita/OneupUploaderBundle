@@ -33,10 +33,10 @@ After installing, enable the bundle in your AppKernel:
 
 public function registerBundles()
 {
-    $bundles = array(
+    $bundles = [
         // ...
         new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
-    );
+    ];
 }
 ```
 
@@ -53,7 +53,7 @@ knp_gaufrette:
             local:
                 directory: %kernel.root_dir%/../web/uploads
                 create: true
-    
+
     filesystems:
         gallery:
             adapter: gallery
@@ -71,7 +71,7 @@ oneup_uploader:
         gallery:
             storage:
                 type: gaufrette
-                filesystem: gaufrette.gallery_filesystem 
+                filesystem: gaufrette.gallery_filesystem
 ```
 
 You can specify the buffer size used for syncing files from your filesystem to the gaufrette storage by changing the property `sync_buffer_size`.
@@ -84,7 +84,7 @@ oneup_uploader:
         gallery:
             storage:
                 type: gaufrette
-                filesystem: gaufrette.gallery_filesystem 
+                filesystem: gaufrette.gallery_filesystem
                 sync_buffer_size: 1M
 ```
 

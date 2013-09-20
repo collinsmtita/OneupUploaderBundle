@@ -45,11 +45,11 @@ class BlueimpController extends AbstractChunkedController
         $key = sprintf('%s.%s', $prefix, $request->get($name));
         $value = $session->get($key);
 
-        $progress = array(
+        $progress = [
             'lengthComputable' => true,
             'loaded' => $value['bytes_processed'],
             'total' => $value['content_length']
-        );
+        ];
 
         return new JsonResponse($progress);
     }
@@ -81,6 +81,6 @@ class BlueimpController extends AbstractChunkedController
         $uuid  = md5(sprintf('%s.%s', $attachmentName, $session->getId()));
         $orig  = $attachmentName;
 
-        return array($last, $uuid, $index, $orig);
+        return [$last, $uuid, $index, $orig];
     }
 }

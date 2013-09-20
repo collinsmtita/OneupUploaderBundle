@@ -26,10 +26,10 @@ class OrphanageManagerTest extends \PHPUnit_Framework_TestCase
             touch($this->orphanagePath . '/' . uniqid(), time() - 1000);
         }
 
-        $this->mockConfig = array(
+        $this->mockConfig = [
             'maxage' => 100,
             'directory' => $this->orphanagePath
-        );
+        ];
 
         $this->mockContainer = $this->getContainerMock();
     }
